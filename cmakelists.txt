@@ -1,0 +1,37 @@
+cmake_minimum_required(VERSION 3.14)
+project(P2PVoiceChat)
+
+set(CMAKE_CXX_STANDARD 17)
+
+# 查找依赖库
+find_package(Qt6 REQUIRED COMPONENTS Widgets)
+
+# 手动指定 PortAudio 路径
+set(PortAudio_INCLUDE_DIRS "/opt/homebrew/opt/portaudio/include")
+set(PortAudio_LIBRARIES "/opt/homebrew/opt/portaudio/lib/libportaudio.dylib")
+
+# 手动指定 libdatachannel 路径
+set(libdatachannel_INCLUDE_DIRS "/path/to/libdatachannel/include")
+set(libdatachannel_LIBRARIES "/path/to/libdatachannel/lib/libdatachannel.a")
+
+# 添加可执行文件
+add_executable(ServersLess
+    main.cpp
+    gui/MainWindow.cpp
+    audio/AudioHandler.cpp
+    p2p/p2phandler.cpp
+)
+
+# 添加包含目录
+target_include_directories(ServersLess PRIVATE
+    ${Qt6Widgets_INCLUDE_DIRS}
+    ${PortAudio_INCLUDE_DIRS}
+    ${libdatachannel_INCLUDE_DIRS}
+)
+
+# 链接库
+target_link_libraries(ServersLess
+    Qt6::Widgets
+    ${PortAudio_LIBRARIES}
+    ${libdatachannel_LIBRARIES}
+)

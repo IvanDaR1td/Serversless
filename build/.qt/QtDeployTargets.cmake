@@ -1,0 +1,2 @@
+set(__QT_DEPLOY_TARGET_ServersLess_FILE /Users/ivandar1td/Desktop/Serversless/build/ServersLess)
+set(__QT_DEPLOY_TARGET_ServersLess_TYPE EXECUTABLE)

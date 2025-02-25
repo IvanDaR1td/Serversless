@@ -1,0 +1,3 @@
+/Users/ivandar1td/Desktop/Serversless/build/CMakeFiles/ServersLess.dir
+/Users/ivandar1td/Desktop/Serversless/build/CMakeFiles/edit_cache.dir
+/Users/ivandar1td/Desktop/Serversless/build/CMakeFiles/rebuild_cache.dir
